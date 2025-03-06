@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathCode Academy | Live Math and Coding Classes for Kids</title>
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #7209b7;
+            --accent-color: #3a0ca3;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+        
+        .hero {
+            background: url('/api/placeholder/1200/600') center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .course-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-content {
+            padding: 1.5rem;
+        }
+        
+        .course-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        .course-details {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .course-details span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .age-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .testimonials {
+            text-align: center;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .cta {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        button {
+            cursor: pointer;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MathCode Academy</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Live Math & Coding Classes for Kids Ages 8-18</h1>
+            <p>Engage your child with interactive, fun, and educational live online classes taught by expert instructors</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn">Explore Courses</a>
+                <a href="#contact" class="btn btn-outline">Register Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="container">
+        <h2>Why Choose MathCode Academy?</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At MathCode Academy, we believe in making math and coding accessible, engaging, and fun for children of all ages. Our live online classes provide real-time interaction with expert instructors who are passionate about teaching these essential skills.</p>
+                <br>
+                <p>Our approach focuses on:</p>
+                <br>
+                <ul>
+                    <li>Small class sizes for personalized attention</li>
+                    <li>Project-based learning that encourages creativity</li>
+                    <li>Age-appropriate curriculum designed to challenge and inspire</li>
+                    <li>Building problem-solving skills applicable to all areas of life</li>
+                    <li>Creating a supportive community of young learners</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="Students learning coding and math">
+            </div>
+        </div>
+    </section>
+    
+    <section id="courses" class="container">
+        <h2>Our Live Courses</h2>
+        <div class="courses">
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="/api/placeholder/400/300" alt="Math Problem Solving">
+                </div>
+                <div class="course-content">
+                    <span class="age-badge">Ages 8-10</span>
+                    <h3>Fun with Math Problem Solving</h3>
+                    <p>Develop critical thinking and problem-solving skills through engaging math challenges designed for younger students.</p>
+                    <div class="course-details">
+                        <span>4 Weeks • Twice Weekly</span>
+                        <span>Live Classes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="/api/placeholder/400/300" alt="Algebra Fundamentals">
+                </div>
+                <div class="course-content">
+                    <span class="age-badge">Ages 11-14</span>
+                    <h3>Algebra Fundamentals</h3>
+                    <p>Master the essential concepts of algebra through interactive lessons, real-world applications, and guided practice.</p>
+                    <div class="course-details">
+                        <span>6 Weeks • Twice Weekly</span>
+                        <span>Live Classes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="/api/placeholder/400/300" alt="Build Games with Scratch">
+                </div>
+                <div class="course-content">
+                    <span class="age-badge">Ages 8-12</span>
+                    <h3>Build Your First Game with Scratch</h3>
+                    <p>Learn the fundamentals of programming logic while creating fun, interactive games using the block-based Scratch platform.</p>
+                    <div class="course-details">
+                        <span>4 Weeks • Twice Weekly</span>
+                        <span>Live Classes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="/api/placeholder/400/300" alt="Python Programming">
+                </div>
+                <div class="course-content">
+                    <span class="age-badge">Ages 13-18</span>
+                    <h3>Python Programming Fundamentals</h3>
+                    <p>Dive into text-based programming with Python, learning core concepts while building practical projects and applications.</p>
+                    <div class="course-details">
+                        <span>6 Weeks • Twice Weekly</span>
+                        <span>Live Classes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="container testimonials">
+        <h2>What Parents & Students Say</h2>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"My daughter was struggling with math, but after taking the problem-solving course, she's not only improved her grades but actually looks forward to math challenges now!"</p>
+            <p class="testimonial-author">- Parent of 9-year-old student</p>
+        </div>
+    </section>
+    
+    <section id="contact" class="cta">
+        <h2>Register for Upcoming Classes</h2>
+        <p>Spaces are limited to ensure quality instruction. Complete the form below to register your child for our upcoming session.</p>
+        
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="parent-name">Parent/Guardian Name</label>
+                <input type="text" id="parent-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="student-name">Student Name</label>
+                <input type="text" id="student-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="student-age">Student Age</label>
+                <input type="number" id="student-age" min="8" max="18" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="course">Interested Course</label>
+                <select id="course" required>
+                    <option value="">Select a course</option>
+                    <option value="math-8-10">Fun with Math Problem Solving (Ages 8-10)</option>
+                    <option value="algebra-11-14">Algebra Fundamentals (Ages 11-14)</option>
+                    <option value="scratch-8-12">Build Your First Game with Scratch (Ages 8-12)</option>
+                    <option value="python-13-18">Python Programming Fundamentals (Ages 13-18)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" rows="4"></textarea>
+            </div>
+            
+            <button type="submit">Submit Registration</button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MathCode Academy</h3>
+                <p>Empowering young minds through engaging math and coding education.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Our Courses</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@mathcodeacademy.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 MathCode Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
