@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathCode Academy | Live Math and Coding Classes for Kids</title>
     <link rel="stylesheet" href="style.css"/>
+    
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Einstein Science, Math and Coding Academy</div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#Home">Home</a></li>
-                <li><a href="#Classes">Classes</a></li>
+                <li class="dropdown">
+                    <a href="#Classes">Classes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#math-classes">Math Classes</a></li>
+                        <li><a href="#coding-classes">Coding Classes</a></li>
+                        <li><a href="#science-classes">Science Classes</a></li>
+                        <li><a href="#all-classes">View All Classes</a></li>
+                    </ul>
+                </li>
                 <li><a href="#About Us">About Us</a></li>
                 <li><a href="#Contact">Contact</a></li>
             </ul>
@@ -203,5 +217,6 @@
             <p>&copy; 2025 MathCode Academy. All Rights Reserved.</p>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

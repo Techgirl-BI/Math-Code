@@ -33,8 +33,47 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            
+        }
+        nav ul li {
+            display: inline-block; /* Ensure they are in a row */
+            margin-left: 30px; 
+            position: relative;
         }
         
+        nav ul li a {
+            text-decoration: none;
+            color: #333; /* Example color */
+            
+        }
+        .dropdown-menu {
+            display: none; /* Initially hide the dropdown menu */
+            position: absolute; /* Position it relative to the .dropdown li */
+            top: 100%; /* Position it below the parent link */
+            left: 0;
+            background-color: #f9f9f9; /* Example background color */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional shadow */
+            z-index: 1; /* Ensure it appears above other elements */
+            list-style: none; /* Remove bullet points */
+            padding: 0;
+            min-width: 220px; /* Example minimum width */
+        }
+        
+        .dropdown-menu li a {
+            color: #3a0ca3; /* Example link color in dropdown */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block; /* Make each link a block element */
+            text-align: left;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #212529; /* Example hover effect for dropdown items */
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block; /* Show the dropdown menu on hover of the parent li */
+        }
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
@@ -61,6 +100,158 @@
             text-decoration: underline;
         }
         
+        .hamburger {
+            display: none; /* Initially hide the hamburger */
+            cursor: pointer;
+        }
+        
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-links {
+            display: flex; /* Keep this for the desktop view */
+            list-style: none;
+            align-items: center; /* Vertically align links */
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+        
+        /* Styles for the dropdown menu (no changes needed here) */
+        .dropdown {
+            position: relative; /* Keep this for dropdown positioning */
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            min-width: 220px;
+        }
+        
+        .dropdown-menu li a {
+            color: #3a0ca3;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #212529;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Media Query for Tablets and Mobile Devices */
+        @media (max-width: 992px) { /* Adjust the breakpoint as needed */
+            nav {
+                position: relative; /* Needed for absolute positioning of the mobile menu */
+            }
+        
+            .hamburger {
+                display: block; /* Show the hamburger menu */
+                position: absolute;
+                top: 1rem;
+                right: 2rem;
+                z-index: 2; /* Ensure it's above the nav links */
+            }
+        
+            .nav-links {
+                display: none; /* Hide the default nav links */
+                position: absolute;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                left: 0;
+                top: 4rem; /* Height of the header */
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+        
+            .nav-links.active {
+                display: flex; /* Show the mobile menu when active class is added */
+            }
+        
+            .nav-links li {
+                margin: 1rem 2rem;
+            }
+        
+            .nav-links li a {
+                color: white;
+            }
+        
+            .nav-links li a:hover {
+                text-decoration: underline;
+            }
+        
+            /* Style the dropdown menu for mobile */
+            .dropdown-menu {
+                position: static; /* Flow normally in the mobile menu */
+                background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+                box-shadow: none;
+                width: 100%;
+                margin-top: 0.5rem;
+                padding-left: 2rem; /* Indent the dropdown items */
+                display: none; /* Initially hide mobile dropdown */
+            }
+        
+            .dropdown.active .dropdown-menu {
+                display: block; /* Show mobile dropdown when parent has 'active' */
+            }
+        
+            .dropdown > a::after {
+                content: '+'; /* Indicate dropdown on mobile */
+                float: right;
+                margin-left: 1rem;
+            }
+        
+            .dropdown.active > a::after {
+                content: '-'; /* Indicate dropdown is open */
+            }
+        }
+        
+        /* Optional: Add styles for when the hamburger is clicked (e.g., changing the icon) */
+        .hamburger.active .line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active .line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
         .hero {
             background: url('./assets/little-boy-doing-school-online.jpg') center/cover;
             height: 70vh;
