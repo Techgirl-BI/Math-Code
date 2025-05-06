@@ -252,6 +252,76 @@
         .hamburger.active .line:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
+        @media (max-width: 992px) { /* Adjust the breakpoint as needed */
+            nav {
+                position: relative; /* Needed for absolute positioning of the mobile menu */
+            }
+        
+            .hamburger {
+                display: block; /* Show the hamburger menu */
+                position: absolute;
+                top: 1rem;
+                right: 2rem;
+                z-index: 2; /* Ensure it's above the nav links */
+            }
+        
+            .nav-links {
+                display: none; /* Hide the default nav links */
+                position: absolute;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                left: 0;
+                top: 4rem; /* Height of the header */
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 3; /* Increased z-index to cover hero content */
+            }
+        
+            .nav-links.active {
+                display: flex; /* Show the mobile menu when active class is added */
+            }
+        
+            .nav-links li {
+                margin: 1rem 2rem;
+            }
+        
+            .nav-links li a {
+                color: white;
+            }
+        
+            .nav-links li a:hover {
+                text-decoration: underline;
+            }
+        
+            /* Style the dropdown menu for mobile */
+            .dropdown-menu {
+                position: static; /* Flow normally in the mobile menu */
+                background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+                box-shadow: none;
+                width: 100%;
+                margin-top: 0.5rem;
+                padding-left: 2rem; /* Indent the dropdown items */
+                display: none; /* Initially hide mobile dropdown */
+                z-index: 4; /* Ensure dropdown is above main nav */
+            }
+        
+            .dropdown.active .dropdown-menu {
+                display: block; /* Show mobile dropdown when parent has 'active' */
+            }
+        
+            .dropdown > a::after {
+                content: '+'; /* Indicate dropdown on mobile */
+                float: right;
+                margin-left: 1rem;
+            }
+        
+            .dropdown.active > a::after {
+                content: '-'; /* Indicate dropdown is open */
+            }
+        }
         .hero {
             background: url('./assets/little-boy-doing-school-online.jpg') center/cover;
             height: 70vh;
