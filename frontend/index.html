@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathCode Academy | Live Math and Coding Classes for Kids</title>
-    <link rel="stylesheet" href="style.css"/>
-    
+    <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
+    <!-- Corrected HTML for proper nested dropdowns -->
     <header>
         <nav>
             <div class="logo">Einstein Science, Math and Coding Academy</div>
@@ -19,40 +22,87 @@
             <ul class="nav-links">
                 <li><a href="#Home">Home</a></li>
                 <li class="dropdown">
-                    <a href="#Classes">Classes</a>
+                    <a href="#" class="dropdown-toggle">Classes</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#math-classes">Math Classes</a></li>
-                        <li><a href="#coding-classes">Coding Classes</a></li>
-                        <li><a href="#science-classes">Science Classes</a></li>
-                        <li><a href="#all-classes">View All Classes</a></li>
+                        <li class="dropdown-submenu">
+                            <a href="#science-classes-section" class="submenu-toggle">Science Classes</a>
+                            <ul class="submenu">
+                                <li><a href="#bioChemPhy">Biology, Chemistry, and Physics</a></li>
+                                <li><a href="#EnvSc">Environmental Science</a></li>
+                                <li><a href="#humanbody">Human Body & Health</a></li>
+                                <li><a href="#scientificInquiryskills">Scientific Inquiry Skills</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#Technology-classes-section" class="submenu-toggle"> Technology Classes</a>
+                            <ul class="submenu">
+                                <li><a href="#elementary-math">Digital Literacy (typing, internet safety)</a></li>
+                                <li><a href="#pre-algebra">Coding (Scratch, Python, HTML/CSS) </a></li>
+                                <li><a href="#algebra">Robotics & IoT</a></li>
+                                <li><a href="#geometry">AI & Tech Ethics</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#Engineering-classes-section" class="submenu-toggle"> Engineering Classes</a>
+                            <ul class="submenu">
+                                <li><a href="#designThinking">Design Thinking</a></li>
+                                <li><a href="#pre-algebra">Building Simple Machines </a></li>
+                                <li><a href="#algebra">Circuits and Electronics </a></li>
+                                <li><a href="#geometry">Engineering Projects (bridges, vehicles, etc.)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#Maths-classes-section" class="submenu-toggle">Maths Classes </a>
+                            <ul class="submenu">
+                                <li><a href="#designThinking">Arithmetic, Geometry, and Algebra</a></li>
+                                <li><a href="#pre-algebra">Data & Probability </a></li>
+                                <li><a href="#algebra">Logic & Problem-Solving </a></li>
+                                <li><a href="#geometry">Math in Real Life</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#language-classes-section" class="submenu-toggle">English </a>
+                            <ul class="submenu">
+                                <li><a href="#designThinking">Reading & Literacy</a></li>
+                                <li><a href="#pre-algebra"> Speaking & Listening </a></li>
+                                <li><a href="#algebra">Writing </a></li>
+                                <li><a href="#geometry">Other Languages: (Yoruba, Igbo, Hausa)</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="#About Us">About Us</a></li>
                 <li><a href="#Contact">Contact</a></li>
+><button>Join NOw</button>
+
+
             </ul>
         </nav>
     </header>
-    
+
     <section class="hero">
         <div class="hero-content">
-            <h1>Live Science, Math & Coding Classes for Kids Ages 8-18</h1>
-            <p>Engage your child with interactive, fun, and educational live online classes taught by expert instructors</p>
+            <h1>Bright Minds, Brighter Future!</h1>
+            <p>An online school where your child explores Science, Technology, Engineering, and Maths through fun and hands-on learning.
+            </p>
             <div class="hero-buttons">
                 <a href="#courses" class="btn">Explore Courses</a>
                 <a href="#contact" class="btn btn-outline">Register Now</a>
             </div>
         </div>
     </section>
-    
+
     <section id="about" class="container">
-        <h2>Why Choose MathCode Academy?</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>At MathCode Academy, we believe in making math and coding accessible, engaging, and fun for children of all ages. Our live online classes provide real-time interaction with expert instructors who are passionate about teaching these essential skills.</p>
-                <br>
-                <p>Our approach focuses on:</p>
-                <br>
-                <ul>
+        <h2>Why Choose Us</h2>
+        <!-- <div class="about-content"> -->
+            <!-- <div class="about-text"> -->
+                <!-- <p>At MathCode Academy, we believe in making math and coding accessible, engaging, and fun for children -->
+                    <!-- of all ages. Our live online classes provide real-time interaction with expert instructors who are -->
+                    <!-- passionate about teaching these essential skills.</p> -->
+                <!-- <br> -->
+                <!-- <p>Our approach focuses on:</p> -->
+                <!-- <br> -->
+                <!-- <ul> -->
                     <li>Small class sizes for personalized attention</li>
                     <li>Project-based learning that encourages creativity</li>
                     <li>Age-appropriate curriculum designed to challenge and inspire</li>
@@ -61,67 +111,76 @@
                 </ul>
             </div>
             <div class="about-image">
-                <img src="/api/placeholder/600/400" alt="Students learning coding and math">
+                <img src="./assets/freepik__an-engaging-and-vibrant-illustration-showing-stude__99052.png"
+                    alt="Students learning coding and math">
             </div>
         </div>
     </section>
-    
+
     <section id="courses" class="container">
         <h2>Our Live Courses</h2>
         <div class="courses">
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/400/300" alt="Math Problem Solving">
+                    <img src="../frontend/assets/freepik__an-illustration-of-a-student-solving-math-problems__99048.png"
+                        alt="Math Problem Solving">
                 </div>
                 <div class="course-content">
                     <span class="age-badge">Ages 8-10</span>
                     <h3>Fun with Math Problem Solving</h3>
-                    <p>Develop critical thinking and problem-solving skills through engaging math challenges designed for younger students.</p>
+                    <p>Develop critical thinking and problem-solving skills through engaging math challenges designed
+                        for younger students.</p>
                     <div class="course-details">
                         <span>4 Weeks • Twice Weekly</span>
                         <span>Live Classes</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/400/300" alt="Algebra Fundamentals">
+                    <img src="../frontend/assets/freepik__an-educational-and-visually-engaging-illustration-__99049.png"
+                        alt="Algebra Fundamentals">
                 </div>
                 <div class="course-content">
                     <span class="age-badge">Ages 11-14</span>
                     <h3>Algebra Fundamentals</h3>
-                    <p>Master the essential concepts of algebra through interactive lessons, real-world applications, and guided practice.</p>
+                    <p>Master the essential concepts of algebra through interactive lessons, real-world applications,
+                        and guided practice.</p>
                     <div class="course-details">
                         <span>6 Weeks • Twice Weekly</span>
                         <span>Live Classes</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/400/300" alt="Build Games with Scratch">
+                    <img src="./assets/freepik__a-colorful-and-fun-illustration-representing-build__99050.png"
+                        alt="Build Games with Scratch">
                 </div>
                 <div class="course-content">
                     <span class="age-badge">Ages 8-12</span>
                     <h3>Build Your First Game with Scratch</h3>
-                    <p>Learn the fundamentals of programming logic while creating fun, interactive games using the block-based Scratch platform.</p>
+                    <p>Learn the fundamentals of programming logic while creating fun, interactive games using the
+                        block-based Scratch platform.</p>
                     <div class="course-details">
                         <span>4 Weeks • Twice Weekly</span>
                         <span>Live Classes</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/400/300" alt="Python Programming">
+                    <img src="./assets/freepik__a-modern-and-sleek-illustration-representing-pytho__99051.png"
+                        alt="Python Programming">
                 </div>
                 <div class="course-content">
                     <span class="age-badge">Ages 13-18</span>
                     <h3>Python Programming Fundamentals</h3>
-                    <p>Dive into text-based programming with Python, learning core concepts while building practical projects and applications.</p>
+                    <p>Dive into text-based programming with Python, learning core concepts while building practical
+                        projects and applications.</p>
                     <div class="course-details">
                         <span>6 Weeks • Twice Weekly</span>
                         <span>Live Classes</span>
@@ -130,72 +189,77 @@
             </div>
         </div>
     </section>
-    
-    <section id="testimonials" class="container testimonials">
-        <h2>What Parents & Students Say</h2>
-        <div class="testimonial-card">
-            <p class="testimonial-text">"My daughter was struggling with math, but after taking the problem-solving course, she's not only improved her grades but actually looks forward to math challenges now!"</p>
-            <p class="testimonial-author">- Parent of 9-year-old student</p>
-        </div>
-    </section>
-    
+
+
     <section id="contact" class="cta">
         <h2>Register for Upcoming Classes</h2>
-        <p>Spaces are limited to ensure quality instruction. Complete the form below to register your child for our upcoming session.</p>
-        
-        <div class="contact-form">
+        <p>Spaces are limited to ensure quality instruction. Complete the form below to register your child for our
+            upcoming session.</p>
+
+        <form id="registration-form" class="contact-form">
             <div class="form-group">
-                <label for="parent-name">Parent/Guardian Name</label>
-                <input type="text" id="parent-name" required>
+                <label for="parent-name">Parent/Guardian Name *</label>
+                <input type="text" id="parent-name" name="parentName" required>
             </div>
-            
+
             <div class="form-group">
-                <label for="student-name">Student Name</label>
-                <input type="text" id="student-name" required>
+                <label for="student-name">Student Name *</label>
+                <input type="text" id="student-name" name="studentName" required>
             </div>
-            
+
             <div class="form-group">
-                <label for="student-age">Student Age</label>
-                <input type="number" id="student-age" min="8" max="18" required>
+                <label for="student-age">Student Age *</label>
+                <input type="number" id="student-age" name="studentAge" min="8" max="18" required>
             </div>
-            
+
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" required>
+                <label for="student-grade">Student Grade Level *</label>
+                <input type="number" id="student-grade" name="studentGrade" min="3" max="12" required>
             </div>
-            
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone">
+                <input type="tel" id="phone" name="phone">
             </div>
-            
+
             <div class="form-group">
-                <label for="course">Interested Course</label>
-                <select id="course" required>
-                    <option value="">Select a course</option>
-                    <option value="math-8-10">Fun with Math Problem Solving (Ages 8-10)</option>
-                    <option value="algebra-11-14">Algebra Fundamentals (Ages 11-14)</option>
-                    <option value="scratch-8-12">Build Your First Game with Scratch (Ages 8-12)</option>
-                    <option value="python-13-18">Python Programming Fundamentals (Ages 13-18)</option>
+                <label for="course">Interested Subject(s) *</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a subject</option>
+                    <option value="math">Math</option>
+                    <option value="science">Sciences</option>
+                    <option value="coding">Coding</option>
+                    <option value="english">English</option>
                 </select>
             </div>
-            
+
             <div class="form-group">
                 <label for="message">Additional Information</label>
-                <textarea id="message" rows="4"></textarea>
+                <textarea id="message" name="message" rows="4"></textarea>
             </div>
-            
-            <button type="submit">Submit Registration</button>
-        </div>
+
+            <button type="submit" id="submit-btn">
+                <span class="btn-text">Submit Registration</span>
+                <span class="btn-loading" style="display: none;">Submitting...</span>
+            </button>
+
+            <div id="form-message" class="form-message" style="display: none;"></div>
+        </form>
     </section>
-    
+
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>MathCode Academy</h3>
-                <p>Empowering young minds through engaging math and coding education.</p>
+                <h3>Einstein Academy</h3>
+                <p>Empowering young minds through engaging Math, Science and Coding education.</p>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
@@ -205,18 +269,19 @@
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>Email: info@mathcodeacademy.com</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@einsteinacademy.com</p>
+                <p>Phone: (+234) 816-572-2442</p>
             </div>
         </div>
-        
+
         <div class="copyright">
-            <p>&copy; 2025 MathCode Academy. All Rights Reserved.</p>
+            <p>&copy; 2025 Einstein Academy. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="./script.js"></script>
 </body>
+
 </html>
